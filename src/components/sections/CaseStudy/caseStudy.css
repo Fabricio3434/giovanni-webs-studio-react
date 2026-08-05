@@ -57,7 +57,7 @@
 .case-study__content-title {
   position: relative;
   font-size: var(--font-size-md);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
 }
 
 .case-study__content-title::before {

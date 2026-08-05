@@ -7,6 +7,7 @@
 
 /* Sección: Projects */
 @import "../components/sections/Projects/projects.css";
+@import "../components/sections/Projects/animations.css";
 
 /* Sección: Contact */
 @import "../components/sections/Contact/contact.css";

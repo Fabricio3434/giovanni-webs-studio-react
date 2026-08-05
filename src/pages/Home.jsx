@@ -21,10 +21,12 @@ export function Home() {
         <Projects onOpenCaseStudy={setSelectedCaseStudyId} />
         <Contact />
       </main>
-      <CaseStudy
-        caseStudy={selectedCaseStudy}
-        onClose={() => setSelectedCaseStudyId(null)}
-      />
+      {selectedCaseStudy && (
+        <CaseStudy
+          caseStudy={selectedCaseStudy}
+          onClose={() => setSelectedCaseStudyId(null)}
+        />
+      )}
     </>
   );
 }

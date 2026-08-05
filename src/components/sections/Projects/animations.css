@@ -1,0 +1,16 @@
+.projects__card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.6s ease,
+    border 0.3s ease;
+}
+
+.projects__card:hover {
+  border-color: var(--color-argentina-yellow);
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--color-argentina-yellow);
+}
+
+.description-text {
+  transition: max-height 0.3s ease;
+}

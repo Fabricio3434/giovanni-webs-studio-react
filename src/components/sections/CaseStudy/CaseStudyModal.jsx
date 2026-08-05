@@ -1,14 +1,32 @@
 import "./caseStudy.css";
 import "./technologies.css";
 import { Technology } from "../../ui/Technology/Technology";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { TimeLine } from "./TimeLine";
 
 export function CaseStudy({ caseStudy, onClose }) {
-  if (!caseStudy) return null;
   const contentRef = useRef(null);
   const firstTitleRef = useRef(null);
   const lastTitleRef = useRef(null);
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  if (!caseStudy) return null;
 
   return (
     <dialog open className="case-study">

@@ -32,17 +32,6 @@
   border: 1px solid var(--color-border-surface);
   background-color: var(--color-surface);
   flex: 0 0 var(--project-card-width);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.6s ease,
-    border 0.3s ease;
-}
-
-.projects__card:hover {
-  border-color: var(--color-argentina-yellow);
-  transform: translate(-4px, -4px);
-  box-shadow: 8px 8px 0 var(--color-argentina-yellow);
 }
 
 .projects__card-container {
@@ -73,16 +62,25 @@
 }
 
 .description-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+
+  line-height: 1.6;
+  max-height: calc(1.6em * 2);
   overflow: hidden;
+
   user-select: none;
   cursor: pointer;
 }
 
 .description-text--expanded {
-  -webkit-line-clamp: unset;
+  max-height: 20em;
 }
 
 .projects__button-container {

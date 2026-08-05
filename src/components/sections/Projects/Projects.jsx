@@ -1,7 +1,33 @@
+import { useEffect, useState } from "react";
 import { projects } from "../../../data/projects.js";
 import "./projects.css";
 
 export function Projects({ onOpenCaseStudy }) {
+  const [expandedDescriptionId, setExpandedDescriptionId] = useState(null);
+
+  const toggleDescription = (projectId) => {
+    setExpandedDescriptionId((currentId) =>
+      currentId === projectId ? null : projectId,
+    );
+  };
+
+  useEffect(() => {
+    const handleClickOutsideDescription = (event) => {
+      if (!event.target.closest(".description-text")) {
+        setExpandedDescriptionId(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", handleClickOutsideDescription);
+
+    return () => {
+      document.removeEventListener(
+        "pointerdown",
+        handleClickOutsideDescription,
+      );
+    };
+  }, []);
+
   return (
     <section className="projects">
       <h2 className="projects__title">Proyectos destacados</h2>
@@ -28,7 +54,18 @@ export function Projects({ onOpenCaseStudy }) {
               <h3 className="projects__card-title">{project.name}</h3>
 
               <p className="projects__card-description">
-                <span className="description-text">{project.description}</span>
+                <button
+                  type="button"
+                  className={`description-text ${
+                    expandedDescriptionId === project.id
+                      ? "description-text--expanded"
+                      : ""
+                  }`}
+                  onClick={() => toggleDescription(project.id)}
+                  aria-expanded={expandedDescriptionId === project.id}
+                >
+                  {project.description}
+                </button>
               </p>
 
               <div className="projects__button-container">
