@@ -1,0 +1,70 @@
+@media (min-width: 550px) {
+  .highlights__item-container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 600px) {
+  .case-study__content-item {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 700px) {
+  .about-me__image-container {
+    flex: 0 0 180px;
+  }
+
+  .about-me__wrapper {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-areas:
+      "about-me highlights"
+      "approach highlights";
+  }
+}
+
+@media (min-width: 900px) {
+  html {
+    font-size: 18px;
+  }
+
+  :root {
+    --project-card-width: 280px;
+  }
+
+  .projects__card {
+    flex: 0 0 var(--project-card-width);
+  }
+
+  .case-study__content-item {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --project-card-width: 360px;
+  }
+
+  .projects__card {
+    flex: 0 0 var(--project-card-width);
+  }
+}
+
+@media (min-width: 1600px) {
+  .container-wrapper {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --project-card-width: 580px;
+  }
+
+  .projects__card {
+    flex: 0 0 var(--project-card-width);
+  }
+}

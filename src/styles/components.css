@@ -1,0 +1,29 @@
+/* Navbar */
+@import "../components/layout/Navbar/navbar.css";
+@import "../components/layout/Navbar/animations.css";
+
+/* Sección: Hero */
+@import "../components/sections/Hero/hero.css";
+
+/* Sección: Projects */
+@import "../components/sections/Projects/projects.css";
+
+/* Sección: Contact */
+@import "../components/sections/Contact/contact.css";
+
+/* Case Study Modal */
+@import "../components/sections/CaseStudy/caseStudy.css";
+@import "../components/sections/CaseStudy/technologies.css";
+
+/* Footer */
+@import "../components/layout/Footer/footer.css";
+@import "../components/layout/Footer/animations.css";
+
+/* Página: About Me */
+@import "../pages/AboutMe/aboutMe.css";
+@import "../pages/AboutMe/Sections/Introduction/introduction.css";
+@import "../pages/AboutMe/Sections/Approach/approach.css";
+@import "../pages/AboutMe/Sections/Highlights/highlights.css";
+
+/* Página: The Study */
+@import "../pages/TheStudy/theStudy.css";

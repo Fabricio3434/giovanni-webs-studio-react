@@ -1,0 +1,43 @@
+.case-study__content-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.technology {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--border-rad-md);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* HTML */
+.technology--html {
+  color: #e34f26;
+  background-color: rgba(226, 63, 18, 0.114);
+}
+
+/* CSS */
+.technology--css {
+  color: #0095ff;
+  background-color: rgba(21, 115, 182, 0.114);
+}
+
+/* JAVASCRIPT */
+.technology--javascript {
+  color: #f7df1e;
+  background-color: rgba(247, 222, 30, 0.114);
+}
+
+/* NETLIFY */
+.technology--netlify {
+  color: #00c7b7;
+  background-color: rgba(0, 199, 182, 0.114);
+}
+
+/* GITHUB */
+.technology--github {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.382);
+}

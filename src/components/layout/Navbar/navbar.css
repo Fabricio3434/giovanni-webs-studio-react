@@ -1,0 +1,73 @@
+.nav {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-surface);
+  margin-bottom: var(--border-rad-lg);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Link para volver a la página principal */
+.nav__brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  width: fit-content;
+}
+
+/* Logo Giovanni Webs Studio */
+.nav__brand-logo {
+  width: var(--size-md);
+  height: auto;
+  fill: var(--color-argentina-yellow);
+}
+
+.nav__brand-name {
+  font-size: var(--font-size-4xs);
+  font-weight: var(--font-weight-light);
+}
+
+.nav__list {
+  display: flex;
+  gap: 1em;
+  font-size: var(--font-size-sm);
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+}
+
+/* Activo siempre visible */
+.nav__link.active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.nav__link.active::after {
+  transform: scaleX(1);
+}
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,118 @@
+.case-study {
+  height: 100dvh;
+  width: 100dvw;
+
+  max-width: none;
+  max-height: none;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor */
+.case-study__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text-tertiary);
+  padding: var(--space-md) var(--space-md);
+  padding-right: var(--space-xs);
+  overflow-y: auto;
+}
+
+/* Contenido */
+.case-study__content {
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+/* Línea del tiempo */
+.case-study__timeline {
+  position: absolute;
+  width: 1.5px;
+  background-color: var(--color-argentina-yellow);
+}
+
+
+/* T+itulo */
+.case-study__title {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* Items del caso de estudios */
+.case-study__content-item {
+  margin-bottom: var(--space-xl);
+}
+
+/* Título de los items*/
+.case-study__content-title {
+  position: relative;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+}
+
+.case-study__content-title::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  left: -21px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-argentina-yellow);
+  border-radius: var(--border-rad-xl);
+  border: 2px solid var(--color-argentina-brown);
+}
+
+/* Tecnologías */
+.case-study__content-highlights {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+/* Cerrar caso de estudio */
+.case-study__close {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  color: var(--color-text-primary);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+
+  border: 1px solid var(--color-border-surface);
+  border-radius: var(--border-rad-xs);
+
+  cursor: pointer;
+
+  margin-bottom: var(--space-xs);
+  padding: var(--space-xs);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.case-study__close:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+/* Flecha */
+.case-study__arrow {
+  height: 12px;
+  width: 12px;
+  flex-shrink: 0;
+  display: block;
+  fill: var(--color-argentina-yellow);
+}

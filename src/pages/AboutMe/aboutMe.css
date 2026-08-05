@@ -1,0 +1,31 @@
+.behind-the-study__title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.about-me__main {
+  margin-bottom: var(--space-lg);
+}
+
+.about-me {
+  grid-area: about-me;
+}
+
+.my-approach {
+  grid-area: approach;
+}
+
+.highlights {
+  grid-area: highlights;
+}
+
+.about-me__wrapper {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-areas:
+    "about-me"
+    "approach"
+    "highlights";
+}

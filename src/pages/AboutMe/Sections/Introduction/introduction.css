@@ -1,0 +1,41 @@
+.about-me__container {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.about-me__image-container {
+  flex: 0 0 140px;
+  position: relative;
+  align-items: flex-start;
+}
+
+.about-me__background {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 80%;
+
+  border-radius: 0.5rem 0.5rem 2rem 2rem;
+  background: var(--gradient-color-dark);
+
+  z-index: 0;
+}
+
+.about-me__image {
+  position: relative;
+  border-radius: var(--border-rad-lg);
+  z-index: 1;
+}
+
+.about-me__title {
+  font-size: var(--font-size-lg-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.about-me__content {
+  padding: var(--space-xs);
+  background-color: var(--color-surface);
+  border-radius: var(--border-rad-sm);
+}
