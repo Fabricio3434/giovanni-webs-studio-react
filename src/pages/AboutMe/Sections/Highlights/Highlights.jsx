@@ -19,27 +19,29 @@ export function Highlights() {
             </li>
 
             <li className="highlights__list-item">
-              Me gusta entender el porqué de las cosas.
+              Busco entender el porqué de las cosas.
             </li>
           </ul>
         </div>
 
         <div className="highlights__item">
-          <h2 className="highlights__title">Mis valores profesionales</h2>
+          <h2 className="highlights__title">Lo que busco en cada proyecto</h2>
 
           <ul className="highlights__list">
-            <li className="highlights__list-item">Interfaces con identidad.</li>
-
             <li className="highlights__list-item">
-              Experiencias claras e intuitivas.
+              Ideas con identidad propia.
             </li>
 
             <li className="highlights__list-item">
-              Detalles que mejoran la experiencia.
+              Soluciones claras y funcionales.
             </li>
 
             <li className="highlights__list-item">
-              Proyectos que representen al cliente.
+              Detalles que aporten valor.
+            </li>
+
+            <li className="highlights__list-item">
+              Proyectos con un propósito.
             </li>
           </ul>
         </div>

@@ -5,13 +5,13 @@ export function Approach() {
         <h2 className="my-approach__title">Mi enfoque</h2>
 
         <p className="my-approach__text">
-          Busco que cada proyecto transmita una identidad única. Cada detalle,
-          función y contenido tiene un propósito y un motivo para estar
-          presente. Investigo constantemente nuevas herramientas y soluciones
-          para crear proyectos que se sientan vivos, con pequeños detalles que
-          aporten más de lo que aparentan. Además, considero fundamental la
-          comunicación constante para poder mejorar, ajustar y agregar nuevas
-          funcionalidades durante el proceso.
+          Busco que cada proyecto tenga una identidad propia y que cada
+          decisión tenga un propósito. Investigo antes de decidir, comparo
+          distintas soluciones y experimento hasta encontrar la que mejor se
+          adapta a lo que quiero construir. También considero importante
+          mantener una comunicación constante durante el proceso, porque
+          escuchar, ajustar y mejorar una idea forma parte de crear un buen
+          resultado.
         </p>
       </div>
     </section>

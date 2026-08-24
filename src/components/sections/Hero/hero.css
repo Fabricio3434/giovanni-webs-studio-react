@@ -4,44 +4,28 @@
   align-items: center;
   border-radius: var(--border-rad-md);
   color: var(--color-argentina-white);
-  border: 2px solid var(--color-argentina-skyblue);
   margin-bottom: var(--space-sm);
   font-size: 10px;
   font-weight: var(--font-weight-bold);
   padding: 0.5em 1em;
   gap: 0.5rem;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    var(--gradient-lorium) border-box;
 }
 
 .hero__separator {
-  display: inline-block;
-  position: relative;
-  top: -1px;
-  width: 0.45rem;
-  height: 0.45rem;
-
-  background-color: var(--color-argentina-yellow);
-  border: 2px solid var(--color-argentina-brown);
-  border-radius: 50%;
+  width: 5px;
+  height: 5px;
   flex-shrink: 0;
+  background-color: var(--color-tertiary);
+  border-radius: 50%;
 }
 
 .hero__title {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-primary);
-  line-height: 1;
-  margin-bottom: var(--space-sm);
-}
-
-.hero__subtitle {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-lg);
-  line-height: 1;
-  margin-bottom: var(--space-sm);
-}
-
-.hero__info {
-  width: 70%;
   margin-bottom: var(--space-xl);
+  font-size: var(--font-size-lg-xl);
   position: relative;
 }
 

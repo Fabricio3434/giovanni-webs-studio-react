@@ -1,35 +1,34 @@
-import "./caseStudy.css";
-import "./technologies.css";
-import { Technology } from "../../ui/Technology/Technology";
 import { useEffect, useRef } from "react";
 import { TimeLine } from "./TimeLine";
+import { useAnimatedUnmount } from "../../../hooks/useAnimatedUnmount.js";
+import { AnimatedMotion } from "../../ui/AnimatedMotion/AnimatedMotion.jsx";
 
-export function CaseStudy({ caseStudy, onClose }) {
+export function CaseStudyModal({ caseStudy, isOpen, onClose }) {
   const contentRef = useRef(null);
   const firstTitleRef = useRef(null);
   const lastTitleRef = useRef(null);
+  const { shouldRender, isClosing } = useAnimatedUnmount(isOpen);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (!shouldRender) return undefined;
 
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
+    function handleKeyDown(e) {
+      if (isOpen && e.key === "Escape") {
         onClose();
       }
-    };
+    }
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose]);
+  }, [isOpen, onClose, shouldRender]);
 
-  if (!caseStudy) return null;
+  if (!shouldRender || !caseStudy) return null;
 
   return (
-    <dialog open className="case-study">
+    <AnimatedMotion as="dialog" open className="case-study" isClosing={isClosing}>
       <div className="case-study__container container-wrapper">
         <button type="button" className="case-study__close" onClick={onClose}>
           <svg
@@ -69,14 +68,6 @@ export function CaseStudy({ caseStudy, onClose }) {
             <p className="case-study__content-solution">{caseStudy.solution}</p>
           </div>
           <div className="case-study__content-item">
-            <strong className="case-study__content-title">Tecnologías</strong>
-            <div className="case-study__content-technologies">
-              {caseStudy.technologies.map((technology) => (
-                <Technology key={technology} technology={technology} />
-              ))}
-            </div>
-          </div>
-          <div className="case-study__content-item">
             <strong className="case-study__content-title">
               Aspectos destacados
             </strong>
@@ -99,6 +90,6 @@ export function CaseStudy({ caseStudy, onClose }) {
           />
         </div>
       </div>
-    </dialog>
+    </AnimatedMotion>
   );
 }

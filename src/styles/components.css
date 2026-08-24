@@ -1,6 +1,12 @@
+/* Modal Bienvenida */
+@import "../components/welcomeModal/WelcomeModal.css";
+
 /* Navbar */
 @import "../components/layout/Navbar/navbar.css";
 @import "../components/layout/Navbar/animations.css";
+
+/* Sección: Servicios */
+@import "../components/sections/Services/services.css";
 
 /* Sección: Hero */
 @import "../components/sections/Hero/hero.css";
@@ -9,12 +15,18 @@
 @import "../components/sections/Projects/projects.css";
 @import "../components/sections/Projects/animations.css";
 
+/* modal de vista previa de Projects */
+@import "../components/sections/PreviewModal/previewModal.css";
+@import "../components/ui/Technology/technology.css";
+
 /* Sección: Contact */
-@import "../components/sections/Contact/contact.css";
+@import "../components/sections/ContactForm/contactForm.css";
+
+/* Sección: Catalog */
+@import "../components/ui/ProjectCard/projectCard.css";
 
 /* Case Study Modal */
 @import "../components/sections/CaseStudy/caseStudy.css";
-@import "../components/sections/CaseStudy/technologies.css";
 
 /* Footer */
 @import "../components/layout/Footer/footer.css";
@@ -28,3 +40,6 @@
 
 /* Página: The Study */
 @import "../pages/TheStudy/theStudy.css";
+
+/* Página: Proyectos */
+@import "../pages/Catalog/catalog.css";

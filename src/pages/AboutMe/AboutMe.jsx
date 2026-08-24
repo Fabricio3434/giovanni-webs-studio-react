@@ -4,9 +4,9 @@ import { Highlights } from "./Sections/Highlights/Highlights.jsx";
 
 export function AboutMe() {
   return (
-    <main className="about-me__main container-wrapper">
-      <h1 className="behind-the-study__title">
-        Detrás de Giovanni Webs Studio
+    <div className="about-me__main container-wrapper">
+      <h1 className="about-me__page-title">
+        Detrás de <strong className="text-gradient">Lorium Studio</strong>
       </h1>
 
       <div className="about-me__wrapper">
@@ -14,6 +14,6 @@ export function AboutMe() {
         <Approach />
         <Highlights />
       </div>
-    </main>
+    </div>
   );
 }

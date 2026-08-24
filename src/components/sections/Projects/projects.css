@@ -4,13 +4,13 @@
 
 .projects__title {
   font-size: var(--font-size-lg);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   font-weight: var(--font-weight-normal);
 }
 
 .projects__text {
   width: 70%;
+  color: var(--color-secondary-text);
   margin-bottom: var(--space-sm);
 }
 
@@ -22,87 +22,4 @@
   padding: var(--border-rad-sm);
   position: relative;
   left: -12px;
-}
-
-/* Card de los proyectos */
-.projects__card {
-  padding: var(--space-xs);
-  font-size: var(--font-size-xs);
-  border-radius: var(--border-rad-sm);
-  border: 1px solid var(--color-border-surface);
-  background-color: var(--color-surface);
-  flex: 0 0 var(--project-card-width);
-}
-
-.projects__card-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Imagen de las card */
-.projects__card-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: var(--border-rad-xs);
-  margin-bottom: var(--space-2xs);
-}
-
-.projects__card-title {
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--space-2xs);
-}
-
-.projects__card-description {
-  border-bottom: 1px solid var(--color-surface);
-  padding-bottom: var(--space-xs);
-  margin-bottom: var(--space-xs);
-}
-
-.description-text {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  text-align: left;
-
-  line-height: 1.6;
-  max-height: calc(1.6em * 2);
-  overflow: hidden;
-
-  user-select: none;
-  cursor: pointer;
-}
-
-.description-text--expanded {
-  max-height: 20em;
-}
-
-.projects__button-container {
-  display: flex;
-  gap: var(--space-md);
-}
-
-.projects__card-button {
-  display: inline-flex;
-  border: 1px solid var(--color-text-primary);
-  border-radius: var(--border-rad-lg);
-  padding: var(--space-2xs) var(--space-xs);
-  color: var(--color-text-primary);
-  align-items: center;
-  align-self: flex-start;
-  text-decoration: none;
-  gap: 0.5em;
-}
-
-.button--secondary {
-  border: 1px solid var(--color-text-secondary);
-  color: var(--color-text-secondary);
-  background-color: transparent;
-  cursor: pointer;
 }

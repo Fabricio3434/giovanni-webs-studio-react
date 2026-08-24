@@ -1,6 +1,7 @@
 .nav {
+  position: relative;
   font-size: 10px;
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,10 +13,14 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  border-bottom: 1px solid var(--color-border-surface);
   margin-bottom: var(--border-rad-lg);
+  border-bottom: 2px solid var(--color-border-surface);
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+}
+
+.header--menu-open {
+  padding-bottom: 193px;
 }
 
 .nav__brand {
@@ -29,45 +34,73 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
   text-decoration: none;
-
   width: fit-content;
 }
 
-/* Logo Giovanni Webs Studio */
+/* Logo Lorium */
 .nav__brand-logo {
-  width: var(--size-md);
+  width: var(--size-3xl);
   height: auto;
-  fill: var(--color-argentina-yellow);
 }
 
-.nav__brand-name {
-  font-size: var(--font-size-4xs);
-  font-weight: var(--font-weight-light);
+/* Botón hamburguesa */
+.nav__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 101;
 }
 
+.nav__toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+/* Menú móvil */
 .nav__list {
   display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em 1.5em;
   gap: 1em;
+  background-color: transparent;
   font-size: var(--font-size-sm);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+.nav__list--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .nav__link {
+  display: inline-block;
+  padding: var(--space-2xs) var(--space-xs);
   text-decoration: none;
-  color: var(--color-text-secondary);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  border-radius: var(--border-rad-xs);
 }
 
-/* Activo siempre visible */
-.nav__link.active {
-  color: var(--color-text-primary);
+/* Enlace activo */
+.nav__link--active {
   font-weight: var(--font-weight-medium);
-}
-
-.nav__link.active::after {
-  transform: scaleX(1);
-}
-.nav__link:focus-visible {
-  outline: 2px solid var(--color-text-primary);
-  outline-offset: 2px;
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
 }

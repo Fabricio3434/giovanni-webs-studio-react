@@ -6,7 +6,6 @@
     "objective": "Diseñar una solución web funcional para negocios que trabajan bajo un modelo de venta basado en catálogo y personalización. El objetivo fue simplificar el proceso de compra, permitiendo que el cliente pueda explorar productos, personalizarlos, revisar su pedido y finalizar la conversación directamente por WhatsApp de forma clara e intuitiva.",
     "problem": "Muchos pequeños negocios que venden productos personalizados gestionan sus pedidos únicamente por WhatsApp o redes sociales. Esto obliga al cliente a explicar manualmente cada detalle del producto, genera conversaciones repetitivas y aumenta la posibilidad de errores tanto para el comprador como para el vendedor.",
     "solution": "Roble Sur propone un flujo de compra organizado donde el usuario puede observar el catálogo, seleccionar un producto, personalizarlo según sus necesidades, revisar el pedido antes de enviarlo y completar un formulario con sus datos para finalizar la solicitud mediante WhatsApp. De esta forma, el vendedor recibe un pedido mucho más claro y estructurado.",
-    "technologies": ["HTML", "CSS", "JavaScript", "Netlify", "GitHub"],
     "highlights": [
       "Flujo de compra diseñado para reducir errores antes del envío del pedido.",
       "Personalización de productos integrada en la experiencia del usuario.",

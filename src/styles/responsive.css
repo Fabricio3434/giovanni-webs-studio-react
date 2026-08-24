@@ -1,26 +1,176 @@
-@media (min-width: 550px) {
-  .highlights__item-container {
-    flex-direction: column;
-  }
-}
-
 @media (min-width: 600px) {
+  /* Altura fija del contenedor: evita que la imagen fuerce un crecimiento desc/* Contenedor: altura fija, imagen a la derecha con ancho tope (no %, para evitar que se estire de más en cards muy anchas) */
+  .about-me__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+  }
+
+  /* Texto: ocupa el espacio restante, centrado verticalmente */
+  .about-me__content {
+    max-width: 400px;
+  }
+
+  /* Imagen: ancho tope fijo en vez de %, así nunca se estira más de lo razonable para un retrato vertical */
+  .about-me__image {
+    width: 200px;
+    height: 100%;
+  }
+
   .case-study__content-item {
     max-width: 70%;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .header--menu-open {
+    padding-bottom: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+    border-bottom: none;
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  :root {
+    --project-card-width: 280px;
+  }
+
+  /* Sección: EL estudio */
+  .the-study__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (min-width: 700px) {
-  .about-me__image-container {
-    flex: 0 0 180px;
+  /* Preview Modal */
+  .preview-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
   }
 
-  .about-me__wrapper {
+  .preview-modal__container {
+    display: flex;
+    flex-direction: row;
+
+    width: auto;
+    height: auto;
+
+    max-width: 1000px;
+    max-height: 85dvh;
+
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-rad-md);
+    overflow: hidden;
+  }
+
+  /* Imagen Preview Modal */
+  .preview-modal__img {
+    width: 45%;
+    height: auto;
+    max-height: 85dvh;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+
+  .preview-modal__content {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 85dvh;
+  }
+}
+
+@media (min-width: 800px) {
+  /* About Me */
+  .about-me__image {
+    width: 200px;
+    height: 100%;
+  }
+
+  .contact-form form {
     display: grid;
-    gap: var(--space-sm);
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-2xl);
+    row-gap: var(--space-lg);
+
     grid-template-areas:
-      "about-me highlights"
-      "approach highlights";
+      "header   details"
+      "services details"
+      "stage    name"
+      "contact  submit";
+  }
+
+  .contact-form__header {
+    grid-area: header;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .contact-form__section--services {
+    grid-area: services;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .contact-form__section--details {
+    grid-area: details;
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .contact-form__textarea {
+    flex: 1;
+    max-height: none;
+  }
+
+  .contact-form__section--stage {
+    grid-area: stage;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .contact-form__section--name {
+    grid-area: name;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .contact-form__section--contact-method {
+    grid-area: contact;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .contact-form__submit {
+    grid-area: submit;
+    align-self: end;
+  }
+
+  .catalog__grid {
+    grid-template-columns: repeat(auto-fill, minmax(0, 360px));
+    justify-content: center;
+    justify-items: initial;
   }
 }
 
@@ -29,26 +179,12 @@
     font-size: 18px;
   }
 
-  :root {
-    --project-card-width: 280px;
-  }
-
-  .projects__card {
-    flex: 0 0 var(--project-card-width);
-  }
-
   .case-study__content-item {
     max-width: 60%;
   }
-}
 
-@media (min-width: 1000px) {
   :root {
-    --project-card-width: 360px;
-  }
-
-  .projects__card {
-    flex: 0 0 var(--project-card-width);
+    --project-card-width: 300px;
   }
 }
 
@@ -61,10 +197,6 @@
 
 @media (min-width: 2000px) {
   :root {
-    --project-card-width: 580px;
-  }
-
-  .projects__card {
-    flex: 0 0 var(--project-card-width);
+    --project-card-width: 460px;
   }
 }

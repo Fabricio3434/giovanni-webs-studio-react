@@ -1,0 +1,136 @@
+/* Modal */
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  max-width: none;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  backdrop-filter: blur(20px);
+}
+
+.preview-modal__container {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+  max-height: none;
+
+  margin: 0;
+
+  background: var(--color-surface);
+  color: var(--color-text-tertiary);
+
+  overflow-y: auto;
+}
+
+.preview-modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 1;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text);
+  background: rgb(0 0 0 / 40%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.preview-modal__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-modal__content {
+  padding: var(--space-lg);
+}
+
+/* Tipo de proyecto */
+.preview-modal__type {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary-text);
+}
+
+/* Título del proyecto */
+.preview-modal__title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+/* Descripción */
+.preview-modal__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Tecnologias */
+.preview-modal__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+/* Duración y Alcance */
+.preview-modal__d-s-container {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.preview-modal__technologies-title,
+.preview-modal__duration-title,
+.preview-modal__scope-title {
+  color: var(--color-text);
+}
+
+/* Botones */
+.preview-modal__actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.preview-modal__btn {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+
+  padding: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+
+  background: var(--gradient-lorium);
+  border: none;
+  border-radius: var(--border-rad-lg);
+  cursor: pointer;
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+}
