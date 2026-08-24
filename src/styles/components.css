@@ -1,5 +1,5 @@
 /* Modal Bienvenida */
-@import "../components/welcomeModal/WelcomeModal.css";
+@import "../components/WelcomeModal/WelcomeModal.jsx";
 
 /* Navbar */
 @import "../components/layout/Navbar/navbar.css";
