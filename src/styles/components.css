@@ -21,6 +21,7 @@
 
 /* Sección: Contact */
 @import "../components/sections/ContactForm/contactForm.css";
+@import "../components/ui/Toast/toast.css";
 
 /* Sección: Catalog */
 @import "../components/ui/ProjectCard/projectCard.css";

@@ -6,7 +6,7 @@ export const socials = [
   },
   {
     icon: [],
-    social: "Email",
-    contactLabel: "Email",
+    social: "Gmail",
+    contactLabel: "Gmail",
   },
 ];

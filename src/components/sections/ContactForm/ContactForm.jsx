@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 import { FormHeader } from "./parts/FormHeader/FormHeader.jsx";
 import { ServiceSelector } from "./parts/ServiceSelector/ServiceSelector.jsx";
@@ -8,6 +9,9 @@ import { NameInput } from "./parts/NameInput/NameInput.jsx";
 import { ContactMethodSelector } from "./parts/ContactMethodSelector/ContactMethodSelector.jsx";
 import { SubmitButton } from "./parts/SubmitButton/SubmitButton.jsx";
 
+import { getWhatsAppUrl } from "../../../utils/messages/whatsapp.js";
+import { buildEmailParams } from "../../../utils/messages/gmail.js";
+import { Toast } from "../../ui/Toast/Toast.jsx"; 
 const initialFormData = {
   service: null,
   projectDetails: "",
@@ -20,6 +24,7 @@ const initialFormData = {
 
 export function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
+  const [toast, setToast] = useState(null);
 
   function updateField(field, value) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -36,10 +41,36 @@ export function ContactForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // TODO: armar mensaje de WhatsApp o enviar con EmailJS según formData.contactMethod
-    console.log(formData);
 
-    setFormData(initialFormData); // resetea todo el formulario
+    if (formData.contactMethod === "WhatsApp") {
+      const url = getWhatsAppUrl(formData);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setToast({ type: "success", message: "¡Mensaje enviado!" });
+      setFormData(initialFormData);
+    }
+
+    if (formData.contactMethod === "Gmail") {
+      const params = buildEmailParams(formData);
+
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          params,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        )
+        .then(() => {
+          setToast({ type: "success", message: "¡Mensaje enviado!" });
+          setFormData(initialFormData);
+        })
+        .catch((error) => {
+          console.error("Error al enviar el email:", error);
+          setToast({
+            type: "error",
+            message: "Ocurrió un error, intentá de nuevo.",
+          });
+        });
+    }
   }
 
   return (
@@ -78,6 +109,14 @@ export function ContactForm() {
 
         <SubmitButton />
       </form>
+
+      {toast && (
+        <Toast
+          type={toast.type}
+          message={toast.message}
+          onClose={() => setToast(null)}
+        />
+      )}
     </section>
   );
 }
