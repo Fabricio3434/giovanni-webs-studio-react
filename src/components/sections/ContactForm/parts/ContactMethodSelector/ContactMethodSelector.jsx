@@ -68,7 +68,8 @@ export function ContactMethodSelector({
 
       {contactChoice === "custom" && selectedSocial && (
         <input
-          type="text"
+          type="email"
+          required
           className="contact-form__input"
           placeholder={`Tu ${selectedSocial.contactLabel}`}
           value={customContact}

@@ -9,12 +9,12 @@
   border-radius: var(--border-rad-lg);
   font-size: var(--font-size-sm);
   color: var(--color-text);
-
+  box-shadow: 0 0 20px var(--color-bg);
   animation: toast-fade-in 0.3s ease;
 }
 
 .toast--success {
-  background: var(--gradient-lorium);
+  background: var(--color-secondary);
 }
 
 .toast--error {

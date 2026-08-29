@@ -7,6 +7,7 @@ export function NameInput({ value, onChange }) {
       <input
         id="name"
         type="text"
+        required
         className="contact-form__input"
         placeholder="Tu nombre"
         value={value}

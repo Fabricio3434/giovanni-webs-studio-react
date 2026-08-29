@@ -11,7 +11,7 @@ import { SubmitButton } from "./parts/SubmitButton/SubmitButton.jsx";
 
 import { getWhatsAppUrl } from "../../../utils/messages/whatsapp.js";
 import { buildEmailParams } from "../../../utils/messages/gmail.js";
-import { Toast } from "../../ui/Toast/Toast.jsx"; 
+import { Toast } from "../../ui/Toast/Toast.jsx";
 const initialFormData = {
   service: null,
   projectDetails: "",
@@ -25,6 +25,7 @@ const initialFormData = {
 export function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
   const [toast, setToast] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function updateField(field, value) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -41,12 +42,15 @@ export function ContactForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
     if (formData.contactMethod === "WhatsApp") {
       const url = getWhatsAppUrl(formData);
       window.open(url, "_blank", "noopener,noreferrer");
       setToast({ type: "success", message: "¡Mensaje enviado!" });
       setFormData(initialFormData);
+      setIsSubmitting(false);
     }
 
     if (formData.contactMethod === "Gmail") {
@@ -64,12 +68,25 @@ export function ContactForm() {
           setFormData(initialFormData);
         })
         .catch((error) => {
+          const errorMessage =
+            error?.text || error?.message || "Ocurrió un error con EmailJS.";
+
           console.error("Error al enviar el email:", error);
           setToast({
             type: "error",
-            message: "Ocurrió un error, intentá de nuevo.",
+            message: `Error: ${errorMessage}`,
           });
+        })
+        .finally(() => {
+          setIsSubmitting(false);
         });
+
+      if (
+        formData.contactMethod !== "WhatsApp" &&
+        formData.contactMethod !== "Gmail"
+      ) {
+        setIsSubmitting(false);
+      }
     }
   }
 
@@ -107,7 +124,7 @@ export function ContactForm() {
           onCustomChange={(value) => updateField("customContact", value)}
         />
 
-        <SubmitButton />
+        <SubmitButton disabled={isSubmitting} />
       </form>
 
       {toast && (
